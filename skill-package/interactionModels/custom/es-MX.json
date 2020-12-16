@@ -1,0 +1,367 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "encuesta covid tecnológico",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "mejor no",
+            "cancelar"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "ayudame",
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "va de nuevo",
+            "reiniciar"
+          ]
+        },
+        {
+          "name": "cuestionariocovid",
+          "slots": [],
+          "samples": [
+            "tengo covid",
+            "preguntame",
+            "empieza cuestionario",
+            "inicia cuestionario"
+          ]
+        },
+        {
+          "name": "preguntatemperatura",
+          "slots": [
+            {
+              "name": "temprelativa",
+              "type": "temprel"
+            }
+          ],
+          "samples": [
+            "{temprelativa}"
+          ]
+        },
+        {
+          "name": "preguntacabeza",
+          "slots": [
+            {
+              "name": "dolorcabeza",
+              "type": "yesorno"
+            }
+          ],
+          "samples": [
+            "{dolorcabeza}",
+            "{dolorcabeza} los he tenido",
+            "{dolorcabeza} lo he sentido"
+          ]
+        },
+        {
+          "name": "preguntaaire",
+          "slots": [
+            {
+              "name": "aire",
+              "type": "yesorno"
+            }
+          ],
+          "samples": [
+            "en veces {aire}",
+            "{aire} me ha faltado "
+          ]
+        },
+        {
+          "name": "preguntatos",
+          "slots": [
+            {
+              "name": "tos",
+              "type": "yesorno"
+            }
+          ],
+          "samples": [
+            "mas o menos {tos}",
+            "{tos} he tenido tos"
+          ]
+        },
+        {
+          "name": "preguntaolores",
+          "slots": [
+            {
+              "name": "olores",
+              "type": "yesorno"
+            }
+          ],
+          "samples": [
+            "{olores} tengo olfato",
+            "{olores} he perdido el olfato",
+            "{olores} he tenido dificultad para oler"
+          ]
+        },
+        {
+          "name": "preguntasabores",
+          "slots": [
+            {
+              "name": "sabor",
+              "type": "yesorno"
+            }
+          ],
+          "samples": [
+            "{sabor} he perdido el gusto"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no"
+              }
+            },
+            {
+              "name": {
+                "value": "si"
+              }
+            }
+          ],
+          "name": "yesorno"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "regular"
+              }
+            },
+            {
+              "name": {
+                "value": "normal"
+              }
+            },
+            {
+              "name": {
+                "value": "alta"
+              }
+            }
+          ],
+          "name": "temprel"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "cuestionariocovid",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.248986536956"
+          },
+          "slots": []
+        },
+        {
+          "name": "preguntatemperatura",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "temprelativa",
+              "type": "temprel",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "preguntacabeza",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dolorcabeza",
+              "type": "yesorno",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "preguntaaire",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "aire",
+              "type": "yesorno",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "preguntatos",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "tos",
+              "type": "yesorno",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "preguntaolores",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "olores",
+              "type": "yesorno",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "preguntasabores",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "sabor",
+              "type": "yesorno",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.28518374527",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "hola mundo"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.248986536956",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Claro, cual es tu temperatura actual, contesta alta si tienes mas de  treinta y ocho grados centígrados ó, regular si tienes menos"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1326572391858",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Has tenido dolores de cabeza?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Claro, has sentido dolor de cabeza ultimamente?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.901242735674",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sientes que te haya faltado el aire?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Y que tal problemas para respirar?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Has tenido problemas para respirar?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Te ha faltado el aire?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1090005424359",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Y que tal tos?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Has tenido tos?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1528292049580",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Puedes oler bien?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Has perdido el olfato?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Has tenido dificultad para percibir olores?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1448863394041",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Y que tal con el gusto, te sabe la comida?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Y que tal para percibir sabores?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.476908146343",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Te agradezco que hayas tomado la encuesta"
+          },
+          {
+            "type": "PlainText",
+            "value": "Muchas gracias por participar en la encuesta"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "8"
+}
